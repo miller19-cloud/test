@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<title>Movie,detail</title>
+	<style>
+		@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap");
+		@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+		*{
+			box-sizing: border-box;
+			padding:0;
+			font-family: "Roboto", sans-serif;
+		}
+
+		body{
+			height: 100%;
+	  		float: none;
+	  		/*background: rgba(47,47,47,0.98);*/
+		}
+		ul{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		.top{
+			width:100%;
+			height:80px;
+			
+		}
+		.container1 {
+			margin: 0 auto;
+		}
+		.topheader{
+			padding: 16px;
+			width:100%;
+			height:80px;
+			display: flex;
+			align-items:center;
+			justify-content: space-between;	
+			box-shadow: 0 4px 4px -4px black;	
+		}
+		.topheader h2{
+			margin-left:20px;
+			font-weight:700;
+		}
+		.topheader nav{
+			width:600px;
+			height:100%;
+		}
+		.topheader ul{
+			width:100%;
+			height: 100%;
+			display:flex;
+		}
+		.topheader ul li{
+			font-size:20px;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			margin-right:2em;
+		}
+		.topheader a{
+			text-transform: uppercase;
+			color: grey;
+			outline: none;
+			font-weight: 500;
+		}
+		.topheader a:hover{
+			color: #ebbe26;
+		}
+
+		.titleArea {
+		    display: inline-block;
+		    padding-top: 245px;
+		    height: 330px;
+		    width: 50%;
+		    color: white;
+		    text-transform: uppercase;
+	    	padding-left: 12em;
+		}
+		h1 {
+		    font-size: 68px;
+		    margin: 0 auto;
+		    letter-spacing: 8px;
+		    font-weight: 700;
+		}
+		h5{
+			font-size: 15px;
+		    font-weight: 400;
+		    margin-top: 25px;
+		    word-spacing: 30px;
+		    margin-bottom: 57px;
+		}
+		.page-1 {
+		  	/*box-shadow: 0px -1px 25px #000000;*/
+		 	background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9) ),  url("https://www.10wallpaper.com/wallpaper/1366x768/1607/Justice_league_2017-2016_Movies_HD_Wallpaper_1366x768.jpg") no-repeat center center;
+		  	background-position: 50% 0;
+		  	background-size: cover;
+		  	width: 100%;
+		  	margin: 0 auto;
+		  	height: 1000px;
+		}
+		.btn-wrap{
+		    background: #ebbe26;
+		    width: 200px;
+		    height: 53px;
+		    border-radius: 30px;
+		}
+		.btn-wrap button {
+	        display: table;
+	        background: #ebbe26;
+	        border-radius: 30px;
+	        text-decoration: none;
+	        color: black;
+	        font-weight: 500;
+	        height: 100%;
+	        width: 100%;
+	        border: none;
+	        letter-spacing: 4px
+	        font-size: 16px;
+	        line-height: 4px;
+	    }
+	    .btn-wrap span{
+	    	margin-left: 15px;
+	    }
+	    .releaseDate {
+		    display: block;
+		    height: auto;
+		    width: 600px;
+		    margin: 0 auto;
+		    margin-top: 220px;
+		    margin-left: 10%;
+		    padding-left: 90px;
+		}
+		.releaseDate span{
+			display: block;
+         	color: #ebbe26;
+         	font-size: 22px;
+         	margin-top: 15px;
+		}
+
+	    .page-2{
+	    	position: relative;
+	 		background: #707070;
+	 		height: 1200px;
+	 		z-index: 1;
+	    }
+	    .movie-menu-header {
+	    	padding: 40px 50px 40px 50px;
+	    	color: grey;
+	    	font-size: 15px;
+	    	width: 1093.69px;
+		    background: white;
+		}
+		.mm-wrap h4{
+			font-size: 32px;
+			color:#ebbe26;
+			font-family: 'Open Sans', sans-serif;
+			font-weight:700;
+		}
+		.explain{
+			font-size: 16px;
+			color: #231815;
+			font-family: 'Open Sans', sans-serif;
+			margin-top: 2em;
+			padding-bottom: 16px;
+			border-bottom: 1px solid #707070;
+		}
+		h3{
+			margin-top: 3em;
+			font-size: 18px;
+			font-weight: 700;
+			border-left: 4px solid #ebbe26;
+			padding-left: 16px
+		}
+		.section-1{
+			/*position: absolute; */
+			margin-left:auto; 
+			margin-right:auto; 
+			width:90% 
+		}
+		.starring{
+			margin: 12px;
+			font-size: 16px;
+			color: #231815;
+			font-family: "Roboto", sans-serif;
+			font-weight:700;
+		}
+		.starring-p{
+			color: #444444;
+			font-family: 'Open Sans', sans-serif;
+			letter-spacing: 0.5px;
+		}
+		.row {
+		  content: "";
+		  display: table;
+		  clear: both;
+		  margin-top: 24px;
+		  margin-left: 3em;
+		}
+
+		.column {
+		  float: left;
+		  padding-right: 8px;
+		  width: 16.66%;
+		}
+
+		.link-container{
+			background-color: #323232;
+			height: 160px;
+			text-align: center;
+			padding-top: 50px;
+		}
+		
+		.link-container a:not(:last-child) {
+			margin-right: 20px;
+		}
+		.link-container p{
+			font-size:12px;
+			color: white;
+			margin-top: 1em;
+		}
+		.section-3{
+			margin-top: 12px;
+			margin-left:auto; 
+			margin-right:auto;
+			width:90% 
+		}
+		.review{
+			padding: 8px;
+			border-bottom: 1px solid #707070;
+		}
+
+	</style>
+</head>
+	<body>
+		<div class= "container1">
+		<div class= "topheader">
+			<h2>Movie,world</h2>
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Poster</a></li>
+					<li><a href="#">Ranking</a></li>
+					<li><a href="#">News</a></li>
+					<li><a href="#">Trailer</a></li>
+				</ul>
+			</nav>
+		</div>
+		</div>
+		<div class="page-1" >
+		<div class="titleArea">
+		      <h1>justice league</h1>
+		      <h5> Adventure Hero action</h5>
+		      <div class="btn-wrap">
+			      <button id="playButton" href="https://www.youtube.com/watch?v=vM-Bja2Gy04">
+			        <span> &#9654; Watch Trailer</span>
+			      </button>
+			  </div>
+		 </div>
+		 	<div class="releaseDate">
+			<span>In HBOmax <br>15 May, 2021 (USA)</span>
+			</div>
+		</div>
+		<div class="page-2">
+		  <div class="movie-menu-header" style="position: absolute; top: -125px; left: 0; right: 0; margin-left:auto; margin-right:auto; height: 1300px; border-radius: 5px;">
+		  <div class="mm-wrap" style="display: block; width: 100%; height: auto;">
+		  	<h4>&#9733; 8.7/10</h4>
+		   </div>
+		   <div class="explain">Fueled by his restored faith in humanity and inspired by Superman's selfless act, Bruce Wayne enlists the help of his new-found ally, Diana Prince, to face an even greater enemy</div>
+		   <h3>Starring</h3>
+		   <div class= "section-1">
+		   <div class="starring">Ben Affleck as Bruce Wayne / Batman:</div>
+		   <div class="starring-p">A wealthy socialite, and the owner of Wayne Enterprises. He dedicates himself to protecting Gotham City from its criminal underworld as a highly trained, masked vigilante equipped with various tools and weapons. Affleck noted on how the film gave him an opportunity to reinvent Batman and portray a more classic take on the character. He described that in the film, audiences will see Batman as more heroic, and more of a leader. "Batman is by nature, [while] not necessarily anti-social, pretty private, pretty a loner," Affleck says. "And then in this movie he's thrust into the role of having to not only work with people, but bring them together and convince them to come in and try to ... somehow with Wonder Woman hold all that community effort together. That was a really interesting thing to play for me, and it also does take us to a more traditional role for Batman in the Justice League comics, and his role with the Justice League versus the sort of less typical version we saw in Batman v Superman, where he was blinded by rage and wanted to take on Superman."</div>
+		<div class="starring">Henry Cavill as Clark Kent / Superman:</div>
+		<div class="starring-p">A member of, and inspiration for, the Justice League. He is a Kryptonian survivor and a journalist for the Daily Planet based in Metropolis. In Justice League, Superman was portrayed as more optimistic and hopeful. The character was intentionally excluded from all Justice League marketing materials to emphasize his death as depicted on Batman v Superman: Dawn of Justice.</div>
+			<div class="starring">Ciarán Hinds as Steppenwolf:</div>
+		   <div class="starring-p">An alien military officer from Apokolips who leads an army of Parademons and is searching for the three Mother Boxes held on Earth. The character is described as "old, tired" and trying to find a way to escape his role of servitude under Darkseid. Hinds portrayed the villain through use of motion capture and received some advice in the process from Liam Neeson, who had recently done similar work in A Monster Calls. After the release of the film, Hinds was reportedly unhappy with the final cut of the film, which trimmed down the backstory and characterization of Steppenwolf.</div>
+		</div>
+		<h3>Related Movies</h3>
+		<div class="section-2">
+			<div class="row">
+		    <div class="column">
+		      <img class="demo cursor" src="https://i.postimg.cc/yN2Gcfgk/the-avengers-1920x1080.jpg" style="width:100%" alt="1. The Avengers">
+		    </div>
+		    <div class="column">
+		      <img class="demo cursor" src="https://i.postimg.cc/QtK8mWnM/justice-league-1920x1080.jpg" style="width:100%" alt="2. Justice League">
+		    </div>
+		    <div class="column">
+		      <img class="demo cursor" src="https://i.postimg.cc/vTrwc7Dp/guardians-of-the-galaxy-vol-2-1920x1080.jpg" style="width:100%" alt="3. Guardians of the Galaxy Vol. 2">
+		    </div>
+		    <div class="column">
+		      <img class="demo cursor" src="https://i.postimg.cc/Yq0vLhth/spider-man-homecoming-1920x1080.jpg" style="width:100%" alt="4. Spider-Man: Homecoming">
+		    </div>   
+		  </div>
+		</div>
+		<h3>Review</h3>
+		<div class="section-3">
+			<div class="review">
+			&#9733; &#9733; &#9733; &#9733;- I really liked it!
+		</div>
+		<div class="review">
+			&#9733; &#9733; &#9733; &#9733; &#9733; - Better than MARVEL series..
+		</div>
+		<div class="review">
+			&#9733; - It's soooooooo boring
+		</div>
+		<div class="review">
+			&#9733; &#9733; &#9733; &#9733; &#9733; - More than FIVE STAR
+		</div>
+		</div>
+	</div>
+	</div>
+	<div class="link-container">
+		<a href="https://facebook.com"><img src="https://applets.imgix.net/https%3A%2F%2Fassets.ifttt.com%2Fimages%2Fchannels%2F36996033%2Ficons%2Fon_color_large.png%3Fversion%3D0?ixlib=rails-2.1.3&w=240&h=240&auto=compress&s=a2564b704df5acaa8d9da981be316963" alt="facebook" width="30"></a>
+		<a href="https://instagram.com"><img src="https://applets.imgix.net/https%3A%2F%2Fassets.ifttt.com%2Fimages%2Fchannels%2F28%2Ficons%2Fon_color_large.png%3Fversion%3D0?ixlib=rails-2.1.3&w=240&h=240&auto=compress&s=edcfefd7633937ca3b3e0cf98a873f58" alt="instagram" width="30"></a>
+		<a href="https://twitter.com"><img src="https://applets.imgix.net/https%3A%2F%2Fassets.ifttt.com%2Fimages%2Fchannels%2F2%2Ficons%2Fon_color_large.png%3Fversion%3D0?ixlib=rails-2.1.3&w=240&h=240&auto=compress&s=90f12c8651ef9ece65a943c29a135bed" alt="twitter" width="30"></a>
+		<p>@copyright by yuvinCheong</p>
+	</div>
+	</body>
+</HTML>
